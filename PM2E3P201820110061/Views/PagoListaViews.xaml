@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PM2E3P201820110061.Views"
+    x:Class="PM2E3P201820110061.Views.PagoListaViews">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Label Text="Listado de Pagos realizados" FontAttributes="Bold" FontSize="26" HorizontalOptions="Center" TextColor="#009274"></Label>
+            <ScrollView>
+                <ListView HorizontalOptions="FillAndExpand" ItemsSource="{Binding PagosL}" SelectedItem="{Binding SelectedPago}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Padding="10,0,0,0">
+                                        <Label Grid.Column="0" Text="{Binding Id_pago}"/>
+                                    </StackLayout>
+                                
+                                    <Label Grid.Column="1" Text="{Binding Descripcion}"/>
+                                    <Label Grid.Column="2" Text="{Binding Monto}"/>
+                                    <Label Grid.Column="3" Text="{Binding Fecha}"/>
+                                    <Label Grid.Column="4" Text="{Binding Photo_recibo}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+            <Button Text="Editar Pago" Command="{Binding EditarPagoCommand}" CommandParameter="{x:Type local:PagoViews}" CornerRadius="50" BackgroundColor="#88C288"></Button>
+            <Button Text="Eliminar Pago" Command="{Binding EliminarPagoCommand}" CornerRadius="50" BackgroundColor="#EC968D"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:PM2E3P201820110061.ViewModels"
+    x:Class="PM2E3P201820110061.Views.PagoViews">
+
+    <ContentPage.BindingContext>
+        <vm:PagoViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+             <StackLayout Margin="10">
+                <Label Text="Pagos" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" TextColor="#009274"></Label>
+
+                <Label Text="Id" FontAttributes="Bold" FontSize="17"></Label>
+                <Entry Text="{Binding Id_pago}" IsReadOnly="True"></Entry>
+
+                <Label Text="Descripción" FontAttributes="Bold" FontSize="17"></Label>
+                <Entry Text="{Binding Descripcion}" Keyboard="Text"></Entry>
+
+                <Label Text="Monto" FontAttributes="Bold" FontSize="17"></Label>
+                <Entry Text="{Binding Monto}" Keyboard="Numeric"></Entry>
+
+                <Label Text="Fecha" FontAttributes="Bold" FontSize="17"></Label>
+                <Entry Text="{Binding Fecha}" Keyboard="Numeric"></Entry>
+
+                <Button Text="Tomar foto de Recibo" Command="{Binding TomarFotoReciboCommand}" CornerRadius="50" BackgroundColor="#8DE5D3"/>
+
+                <Label Text="{Binding pathFoto}"></Label>
+                <!--<Image Source="{Binding Imagen_recibo}" WidthRequest="100" HeightRequest="100"/>-->
+
+                <Button Text="Guardar Pago" Command="{Binding GuardarPagoCommand}" CornerRadius="50" BackgroundColor="#88C288"></Button>
+                <Button Text="Listado de Pagos" x:Name="btnVerLista" Clicked="btnVerLista_Clicked" CornerRadius="50" BackgroundColor="#8EC9E3"></Button>
+                <Button Text="Limpiar" Command="{Binding LimpiarCommand}" CornerRadius="50" BackgroundColor="#D0DBDE"></Button>
+             </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
