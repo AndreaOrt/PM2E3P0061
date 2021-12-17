@@ -102,7 +102,8 @@ namespace PM2E3P201820110061.ViewModels
                     OkText = "OK",
                     Title = "Confirmación"
                 });
-                ListadoPagos();
+                //PagosL.Remove(empEliminar);
+                //ListadoPagos();
                 Navigation.PopAsync();
             }
             else

@@ -33,7 +33,7 @@
 
                 <Button Text="Guardar Pago" Command="{Binding GuardarPagoCommand}" CornerRadius="50" BackgroundColor="#88C288"></Button>
                 <Button Text="Listado de Pagos" x:Name="btnVerLista" Clicked="btnVerLista_Clicked" CornerRadius="50" BackgroundColor="#8EC9E3"></Button>
-                <Button Text="Limpiar" Command="{Binding LimpiarCommand}" CornerRadius="50" BackgroundColor="#D0DBDE"></Button>
+                <!--<Button Text="Limpiar" Command="{Binding LimpiarCommand}" CornerRadius="50" BackgroundColor="#D0DBDE"></Button>-->
              </StackLayout>
         </ScrollView>
     </ContentPage.Content>

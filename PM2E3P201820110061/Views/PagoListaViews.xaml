@@ -9,9 +9,11 @@
             <Label Text="Listado de Pagos realizados" FontAttributes="Bold" FontSize="26" HorizontalOptions="Center" TextColor="#009274"></Label>
             <ScrollView>
                 <ListView HorizontalOptions="FillAndExpand" ItemsSource="{Binding PagosL}" SelectedItem="{Binding SelectedPago}">
+                    
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                <ViewCell.View>
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
@@ -19,8 +21,11 @@
                                     </Grid.RowDefinitions>
 
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
                                     <StackLayout Padding="10,0,0,0">
@@ -28,10 +33,11 @@
                                     </StackLayout>
                                 
                                     <Label Grid.Column="1" Text="{Binding Descripcion}"/>
-                                    <Label Grid.Column="2" Text="{Binding Monto}"/>
+                                    <Label Grid.Column="2" Text="{Binding Monto, StringFormat='L. {0}'}"/>
                                     <Label Grid.Column="3" Text="{Binding Fecha}"/>
                                     <Label Grid.Column="4" Text="{Binding Photo_recibo}"/>
                                 </Grid>
+                                </ViewCell.View>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

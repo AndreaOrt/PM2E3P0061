@@ -84,6 +84,7 @@ namespace PM2E3P201820110061.ViewModels
             Descripcion = string.Empty;
             Monto = 0;
             Fecha = 0;
+            pathFoto = string.Empty;
         }
 
         void GuardarPago()
@@ -118,18 +119,15 @@ namespace PM2E3P201820110061.ViewModels
                 });
                 return;
             }
-            else if (System.String.IsNullOrWhiteSpace(pathFoto))
+            else if (System.String.IsNullOrWhiteSpace(pathFoto) && Id_pago == 0)
             {
-                if(Id_pago == 0)
+                UserDialogs.Instance.Alert(new AlertConfig
                 {
-                    UserDialogs.Instance.Alert(new AlertConfig
-                    {
-                        Message = "Por favor agregue la foto del recibo.",
-                        OkText = "OK",
-                        Title = "Alerta"
-                    });
-                    return;
-                }
+                    Message = "Por favor agregue la foto del recibo.",
+                    OkText = "OK",
+                    Title = "Alerta"
+                });
+                return;
             }
             else
             {
